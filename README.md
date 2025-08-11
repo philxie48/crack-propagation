@@ -65,9 +65,6 @@ python fem_electric_simulation.py
 ├── fem_electric_simulation.py           # Electro-mechanical simulation  
 ├── pure_mechanical.md                   # Pure mechanical workflow documentation
 ├── electric-mechanical.md               # Electro-mechanical workflow documentation
-├── test_performance_fix.py              # Performance testing utilities
-└── fem_results/                         # Output directory for results
-```
 
 ## 🔧 Technical Specifications
 
