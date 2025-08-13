@@ -25,15 +25,11 @@ python robust_crack_mesh.py
 
 ### Step 2A: Pure Mechanical Simulation
 
-**Option 1: Direct Stiffness Matrix (Recommended)**
+**Direct Stiffness Matrix **
 ```bash
 python fem_crack_simulation_updated.py
 ```
 
-**Option 2: Newton-Raphson Iteration**
-```bash
-python fem_crack_simulation_newton_raphson.py
-```
 
 **Purpose**: Simulates crack propagation driven by mechanical loading only
 - **Input**: `robust_crack.npz` 
@@ -58,13 +54,13 @@ python fem_electric_simulation.py
 ## 📁 Repository Structure
 
 ```
-├── README.md                             # This file
-├── robust_crack_mesh.py                 # Mesh generation system
-├── fem_crack_simulation_updated.py      # Pure mechanical simulation (direct method)
-├── fem_crack_simulation_newton_raphson.py # Pure mechanical simulation (Newton-Raphson)
-├── fem_electric_simulation.py           # Electro-mechanical simulation  
-├── pure_mechanical.md                   # Pure mechanical workflow documentation
-├── electric-mechanical.md               # Electro-mechanical workflow documentation
+├── README.md                               # This file
+├── robust_crack_mesh.py                    # Mesh generation system
+├── fem_crack_simulation_updated.py         # Pure mechanical simulation (direct method)
+├── fem_crack_simulation_newton_raphson.py  # Pure mechanical simulation (Newton-Raphson)
+├── electric_mechanical.py                  # Electro-mechanical simulation  
+├── pure_mechanical.md                      # Pure mechanical workflow documentation
+├── electric-mechanical.md                  # Electro-mechanical workflow documentation
 
 ## 🔧 Technical Specifications
 
