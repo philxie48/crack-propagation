@@ -151,7 +151,7 @@ The system is solved as a **fully coupled linear problem** using direct stiffnes
    a. **Assemble coupled system matrix**:
       - Compute stiffness matrix K and force vector F
       - Mechanical block: K_uu = ∫ g(φ) B^T D B dΩ
-      - Phase field block: K_φφ = ∫ [Gc l₀ ∇N·∇N + (Gc/l₀ + 2ψ) N·N] dΩ + Penalty
+      - Phase field block: K_φφ = ∫ [Gc l₀ ∇N·∇N + (Gc/l₀ + 2ψ) N·N] dΩ - Penalty
       - Coupling blocks: K_uφ and K_φu from degradation and energy derivatives
       - Force vector: F_u (body forces), F_φ (energy driving forces + penalty)
    
@@ -201,7 +201,7 @@ Fᵤᵢ = ∫_Ω b·Nᵢ dΩ
 ### Phase Field Matrix Components
 ```
 Kφᵢⱼᶠᵘ = ∫_Ω 2∂ψ(ε)/∂ε Nᵢ Bⱼ dΩ
-Kφᵢⱼᶠᶠ = ∫_Ω [Gc l₀∇Nᵢ·∇Nⱼ + (Gc/l₀)NᵢNⱼ + 2∂ψ(ε)/∂φ NᵢNⱼ] dΩ + Penalty terms
+Kφᵢⱼᶠᶠ = ∫_Ω [Gc l₀∇Nᵢ·∇Nⱼ + (Gc/l₀)NᵢNⱼ + 2∂ψ(ε)/∂φ NᵢNⱼ] dΩ - Penalty terms
 Fφᵢ = ∫_Ω 2ψ(ε)Nᵢ dΩ
 ```
 
