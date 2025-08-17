@@ -496,7 +496,7 @@ class FEMElectricCrackSimulation:
                 for i in range(3):
                     phi_dot = (phi_elem[i] - phi_old_elem[i]) / self.dt
                     penalty_deriv = self.penalty_derivative(phi_dot)
-                    K_phi_phi_elem[i, i] += penalty_deriv * area * weight / self.dt
+                    K_phi_phi_elem[i, i] += -penalty_deriv * area * weight / self.dt
                 
                 # Assemble into global matrix with proper integer indexing
                 # K_uu block
@@ -833,4 +833,5 @@ def main():
     sim.run_simulation()
 
 if __name__ == "__main__":
+
     main()
