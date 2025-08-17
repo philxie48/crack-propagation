@@ -300,7 +300,7 @@ class FEMCrackSimulationUpdated:
                 for i in range(3):
                     phi_dot = (phi_elem[i] - phi_old_elem[i]) / self.dt
                     penalty_deriv = self.penalty_derivative(phi_dot)
-                    K_phi_phi_elem[i, i] += penalty_deriv * area * weight / self.dt
+                    K_phi_phi_elem[i, i] += -penalty_deriv * area * weight / self.dt
                 
                 # Global DOF indices
                 u_dofs = np.array([2*element[0], 2*element[0]+1, 
@@ -510,7 +510,7 @@ class FEMCrackSimulationUpdated:
                         R_phi_penalty[i] = penalty_value * N[i] * area * weight
                 
                 # Total phase field residual
-                R_phi_elem = R_phi_diffusion + R_phi_resistance + R_phi_driving + R_phi_penalty
+                R_phi_elem = R_phi_diffusion + R_phi_resistance + R_phi_driving - R_phi_penalty
                 
                 # =============================================================
                 # ASSEMBLY INTO GLOBAL RESIDUAL VECTORS
@@ -634,7 +634,7 @@ class FEMCrackSimulationUpdated:
                         J_phiphi_penalty[i, i] = penalty_deriv * N[i]**2 * area * weight / self.dt
                 
                 # Combine all φ-φ terms
-                J_phiphi_elem = J_phiphi_diffusion + J_phiphi_resistance + J_phiphi_penalty
+                J_phiphi_elem = J_phiphi_diffusion + J_phiphi_resistance - J_phiphi_penalty
                 
                 # =============================================================
                 # ASSEMBLY INTO GLOBAL JACOBIAN MATRIX
