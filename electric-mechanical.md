@@ -124,7 +124,7 @@ Where:
 ### 4.3 Phase Field Weak Form
 Find φ ∈ H¹ such that:
 ```
-∫_Ω [Gc l₀ ∇δφ · ∇φ + (Gc/l₀ + 2[ψ(ε) + W(E)]) δφ φ + η/(m∆t) δφ ⟨φ̇⟩₋ᵐ] dΩ = 
+∫_Ω [Gc l₀ ∇δφ · ∇φ + (Gc/l₀ + 2[ψ(ε) + W(E)]) δφ φ - η/(m∆t) δφ ⟨φ̇⟩₋ᵐ] dΩ = 
 ∫_Ω 2[ψ(ε) + W(E)] δφ dΩ
 ```
 
@@ -179,7 +179,7 @@ For each time step n+1:
    ```
    Where:
    - K_uu = ∫_Ω g(φⁿ) Bᵀ D B dΩ (mechanical stiffness)
-   - K_φφ = ∫_Ω [Gc l₀ ∇N·∇N + (Gc/l₀ + 2[ψ + W]) N·N + η/(m∆t) N·N] dΩ (phase field)
+   - K_φφ = ∫_Ω [Gc l₀ ∇N·∇N + (Gc/l₀ + 2[ψ + W]) N·N - η/(m∆t) N·N] dΩ (phase field)
    - K_uφ, K_φu = coupling terms between mechanics and phase field
 
 2. **Apply boundary conditions**:
@@ -219,7 +219,7 @@ F_u[2i+1] = ∫_Γₙᵘ t_y N_i dΓ + ∫_Ω f_y N_i dΩ
 
 ### 8.3 Phase Field Matrix
 ```
-K_φ[i,j] = ∫_Ω [Gc l₀ ∇N_i · ∇N_j + (Gc/l₀ + 2[ψ + W] + η/(m∆t)) N_i N_j] dΩ
+K_φ[i,j] = ∫_Ω [Gc l₀ ∇N_i · ∇N_j + (Gc/l₀ + 2[ψ + W] - η/(m∆t)) N_i N_j] dΩ
 F_φ[i] = ∫_Ω 2[ψ + W] N_i dΩ + η/(m∆t) ∫_Ω (φ̇)^(m-1) N_i dΩ
 ```
 
