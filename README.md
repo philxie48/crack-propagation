@@ -25,11 +25,12 @@ python robust_crack_mesh.py
 
 ### Step 2A: Pure Mechanical Simulation
 
+⚡⚡⚡！！！For the iteration method, the previous code fem_crack_simulation_updated.py can't handle the nonlinear problem well, I now have update a new code fem_crack_simulation_newton_raphson.py focused on nonlinear problem iteration. Also there is a following code named fem_parallel_utils.py, where users can know the core number in CPU, which can be used in the solving for parallel computation. 
+
 **Direct Stiffness Matrix **
 ```bash
 python fem_crack_simulation_updated.py
 ```
-
 
 **Purpose**: Simulates crack propagation driven by mechanical loading only
 - **Input**: `robust_crack.npz` 
@@ -61,7 +62,7 @@ python fem_electric_simulation.py
 ├── electric_mechanical.py                  # Electro-mechanical simulation  
 ├── pure_mechanical.md                      # Pure mechanical workflow documentation
 ├── electric-mechanical.md                  # Electro-mechanical workflow documentation
-
+├── fem_parallel_utils.py                   # CPU cores detection 
 ## 🔧 Technical Specifications
 
 ### Material Properties
@@ -106,12 +107,23 @@ pip install numpy scipy matplotlib gmsh meshio
    This creates `robust_crack.msh` and `robust_crack.npz` files.
 
 2. **Run mechanical simulation**:
+   newly updated newton raphson method focusing on nonlinear iteration
+   test CPU cores for comming testing 
+   ```bash
+   python fem_parallel_utils.py
+   ```
+
+    ```bash
+    python fem_crack_simulation_newton_raphson.py
+    at line 68 self.n_cores = 12 (default number) you can replace 12 with your preference
+    ```
+   -------------------------------------------------------
    ```bash
    python fem_crack_simulation_updated.py
    ```
    Results saved in same directory with the excution code.
 
-3. **Run electro-mechanical simulation**:
+4. **Run electro-mechanical simulation**:
    ```bash
    python fem_electric_simulation.py
    # Select: 1 (test mode) or 2 (full simulation)
