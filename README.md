@@ -32,7 +32,7 @@ python robust_crack_mesh.py
 python fem_crack_simulation_newton_raphson.py
 ```
 
-**Direct Stiffness Matrix **
+**Direct Stiffness Matrix**
 ```bash
 python fem_crack_simulation_updated.py
 ```
@@ -112,6 +112,8 @@ pip install numpy scipy matplotlib gmsh meshio
    This creates `robust_crack.msh` and `robust_crack.npz` files.
 
 2. **Run mechanical simulation**:
+
+   **Newton Raphson Iteration(more accurate for non linear solving)**
    newly updated newton raphson method focusing on nonlinear iteration
    test CPU cores for comming testing 
    ```bash
@@ -120,9 +122,10 @@ pip install numpy scipy matplotlib gmsh meshio
 
     ```bash
     python fem_crack_simulation_newton_raphson.py
-    at line 68 self.n_cores = 12 (default number) you can replace 12 with your preference
     ```
+   at line 68 self.n_cores = 12 (default number) you can replace 12 with your preference
    -------------------------------------------------------
+   **Direct Stiffness Matrix**
    ```bash
    python fem_crack_simulation_updated.py
    ```
