@@ -27,6 +27,11 @@ python robust_crack_mesh.py
 
 ⚡⚡⚡！！！For the iteration method, the previous code fem_crack_simulation_updated.py can't handle the nonlinear problem well, I now have update a new code fem_crack_simulation_newton_raphson.py focused on nonlinear problem iteration. Also there is a following code named fem_parallel_utils.py, where users can know the core number in CPU, which can be used in the solving for parallel computation. 
 
+**Newton Raphson Iteration**
+```bash
+python fem_crack_simulation_newton_raphson.py
+```
+
 **Direct Stiffness Matrix **
 ```bash
 python fem_crack_simulation_updated.py
