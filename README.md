@@ -123,7 +123,8 @@ pip install numpy scipy matplotlib gmsh meshio
     ```bash
     python fem_crack_simulation_newton_raphson.py
     ```
-   at line 68 self.n_cores = 12 (default number) you can replace 12 with your preference
+    at line 68 self.n_cores = 12 (default number) you can replace 12 with your preference
+      
    -------------------------------------------------------
    **Direct Stiffness Matrix**
    ```bash
