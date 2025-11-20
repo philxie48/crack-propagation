@@ -217,6 +217,7 @@ Degraded conductivity equation:
 
 ### Simulation Parameters
 Edit material properties, time steps, and simulation duration in the respective simulation files:
+- `fem_crack_simulation_newton_raphson.py` (lines 43-83)
 - `fem_crack_simulation_updated.py` (lines 36-56)
 - `fem_electric_simulation.py` (lines 37-74)
 
